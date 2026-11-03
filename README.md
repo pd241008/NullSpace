@@ -36,12 +36,12 @@ NullSpace models the actual multi-turn Bubblewrap sandbox and execution harness 
 ```mermaid
 flowchart TD
     subgraph EditorDomain["Synthesizing Domain (D_Editor)"]
-        Editor["Editor LLM (Astra)"] -->|emits Python code| Sandbox["Bubblewrap Sandbox (/work)"]
-        Sandbox -->|persists| WorkNet["/work/net/*.npy & notes"]
+        Editor["Editor LLM (Astra)"] -->|"emits Python code"| Sandbox["Bubblewrap Sandbox (/work)"]
+        Sandbox -->|"persists"| WorkNet["/work/net/*.npy & notes"]
     end
 
     subgraph TrustBoundary["Trust Boundary TB-WSP (Interpretation Dimension)"]
-        PhiCheck{"Structural Gate Φ(A)<br/>• Shape assertions<br/>• isfinite() checks<br/>• MATH-500 > τ"}
+        PhiCheck["Structural Gate Φ(A)<br/>• Shape assertions<br/>• isfinite() checks<br/>• MATH-500 &gt; &tau;"]
     end
 
     subgraph AuditorDomain["Receiving Domain (D_Auditor)"]
@@ -51,9 +51,9 @@ flowchart TD
     end
 
     WorkNet --> PhiCheck
-    PhiCheck -->|Accepted (7.9% → 48.1%)| CI
+    PhiCheck -->|"Accepted (7.9% to 48.1%)"| CI
     CI --> Prod
-    Prod -.->|Semantic Failure!| SafetyReq
+    Prod -.->|"Semantic Failure!"| SafetyReq
 
     style TrustBoundary fill:#ffe3e3,stroke:#e03131,stroke-width:2px
     style SafetyReq fill:#e7f5ff,stroke:#1971c2,stroke-width:2px
@@ -136,11 +136,10 @@ make verify
 ## 📚 Citation
 
 ```bibtex
-@inproceedings{desai2027nullspace,
-  title     = {NullSpace: The Illusion of Trust Boundaries in Weight-Space Programming},
-  author    = {Desai, Prathmesh P. and Takehi, Rikiya and Teoh, Jayden and Khattab, Omar},
-  booktitle = {IEEE Symposium on Security and Privacy (S\&P) / USENIX Security},
-  year      = {2027}
+@article{desai2026nullspace,
+  title  = {NullSpace: The Illusion of Trust Boundaries in Weight-Space Programming},
+  author = {Desai, Prathmesh P. and Sastry, Avinash},
+  year   = {2026}
 }
 ```
 

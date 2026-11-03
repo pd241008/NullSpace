@@ -65,7 +65,7 @@ We choose this approach because neural weight editing is isomorphic to multi-sta
 ## ⚖️ Consequences
 
 - **Good:** 🟢 Provides a rock-solid theoretical foundation that unifies classical compiler security with frontier weight-space ML research.
-- **Good:** 🟢 Establishes exact mathematical definitions for three novel attack vectors, creating high-impact publishability for Tier-1 security conferences (USENIX Security / IEEE S&P 2027).
+- **Good:** 🟢 Establishes exact mathematical definitions for three novel attack vectors, creating high-impact publishability for top-tier security research and publication venues.
 - **Good:** 🟢 Defines clear pass/fail invariants for the upcoming Phase 2 empirical mutation sweeps on Qwen-0.5B.
 - **Bad:** 🔴 Requires developing specialized tooling to project and isolate null-space perturbations across tensor checkpoints.
 - **Bad:** 🔴 Acknowledges that existing structural safeguards (`assert isfinite`, `assert shape`) in WSP frameworks are fundamentally insufficient for security.
