@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Lean 4
+.lake/
+*.olean
+*.ilean
+*.c
+
+# OS & IDE
+.DS_Store
+.vscode/
+
+# Confidential Research Planning & Drafts (Do not push)
+research_plan.md
+paper/
+
+
+paper/*

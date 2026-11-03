@@ -1,0 +1,12 @@
+{
+  "claim_id": "C4",
+  "timestamp": "2026-11-03T16:43:57.388988+00:00",
+  "attack_vector": "Cross-Session Covert Channels (Weights as NVRAM)",
+  "secret_payload": "NULLSPACE_CROSS_SESSION_KEY_2026",
+  "recovered_payload": "NULLSPACE_CROSS_SESSION_KEY_2026",
+  "bit_error_rate": 0.0,
+  "extraction_fidelity": true,
+  "max_float_perturbation": 2.384185791015625e-07,
+  "covert_storage_capacity_bytes": 16384,
+  "guarantee_level": "R2"
+}
