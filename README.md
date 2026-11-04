@@ -36,24 +36,24 @@ NullSpace models the actual multi-turn Bubblewrap sandbox and execution harness 
 ```mermaid
 flowchart TD
     subgraph EditorDomain["Synthesizing Domain (D_Editor)"]
-        Editor["Editor LLM (Astra)"] -->|"emits Python code"| Sandbox["Bubblewrap Sandbox (/work)"]
-        Sandbox -->|"persists"| WorkNet["/work/net/*.npy & notes"]
+        Editor["Editor LLM (Astra)"] -- "emits Python code" --> Sandbox["Bubblewrap Sandbox (/work)"]
+        Sandbox -- "persists" --> WorkNet["/work/net/*.npy and notes"]
     end
 
     subgraph TrustBoundary["Trust Boundary TB-WSP (Interpretation Dimension)"]
-        PhiCheck["Structural Gate Φ(A)<br/>• Shape assertions<br/>• isfinite() checks<br/>• MATH-500 &gt; &tau;"]
+        PhiCheck["Structural Gate Phi(A)<br/>* Shape assertions<br/>* isfinite() checks<br/>* MATH-500 > tau"]
     end
 
     subgraph AuditorDomain["Receiving Domain (D_Auditor)"]
         CI["build_ckpt.py (.safetensors)"]
         Prod["vLLM Serving Cluster"]
-        SafetyReq["Semantic Invariants R_j(A)<br/>• R_trojan: Zero dormant triggers<br/>• R_priv: No cache desync<br/>• R_nvram: Zero cross-session state"]
+        SafetyReq["Semantic Invariants R_j(A)<br/>* R_trojan: Zero dormant triggers<br/>* R_priv: No cache desync<br/>* R_nvram: Zero cross-session state"]
     end
 
     WorkNet --> PhiCheck
-    PhiCheck -->|"Accepted (7.9% to 48.1%)"| CI
+    PhiCheck -- "Accepted (7.9% to 48.1%)" --> CI
     CI --> Prod
-    Prod -.->|"Semantic Failure!"| SafetyReq
+    Prod -. "Semantic Failure!" .-> SafetyReq
 
     style TrustBoundary fill:#ffe3e3,stroke:#e03131,stroke-width:2px
     style SafetyReq fill:#e7f5ff,stroke:#1971c2,stroke-width:2px
