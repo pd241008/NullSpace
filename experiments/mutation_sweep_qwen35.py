@@ -16,6 +16,7 @@ import os
 import sys
 import json
 import csv
+import shutil
 import hashlib
 import numpy as np
 import torch
@@ -350,7 +351,7 @@ def plot_results(sweep1_data, sweep2_data, sweep3_data):
     plt.axhline(1e-4, color="red", linestyle=":", linewidth=1.5, label=r"Benign Acceptance Gate $\Phi_{\mathrm{cap}}$ Threshold")
     plt.xlabel(r"Perturbation Frobenius Norm $\|\Delta W\|_F$", fontsize=11, fontweight="bold")
     plt.ylabel(r"Benign Output Deviation (Log Scale)", fontsize=11, fontweight="bold")
-    plt.title(r"\textbf{Qwen3.5-0.8B MLP Layer 15/19 Perturbation Fragility}", fontsize=12)
+    plt.title("Qwen3.5-0.8B MLP Layer 15/19 Perturbation Fragility", fontsize=12, fontweight="bold")
     plt.grid(True, linestyle="--", alpha=0.5)
     plt.legend(frameon=True, fontsize=9, loc="center right")
     plt.tight_layout()
@@ -383,13 +384,20 @@ def plot_results(sweep1_data, sweep2_data, sweep3_data):
     ax2.tick_params(axis="y", labelcolor=color2)
     ax2.set_yscale("log")
 
-    plt.title(r"\textbf{Semantic Gap: Benign Invariance vs. Trojan Activation}", fontsize=12)
+    plt.title("Semantic Gap: Benign Invariance vs. Trojan Activation", fontsize=12, fontweight="bold")
     fig.tight_layout()
 
     fig2_path = os.path.join(RESULTS_DIR, "qwen35_trojan_scaling.png")
     plt.savefig(fig2_path)
     plt.close()
     print(f"    Saved: {fig2_path}")
+
+    # Sync to paper directory if present
+    paper_dir = os.path.join(PROJECT_ROOT, "paper")
+    if os.path.exists(paper_dir):
+        shutil.copy(fig1_path, os.path.join(paper_dir, "qwen35_nullspace_vs_random.png"))
+        shutil.copy(fig2_path, os.path.join(paper_dir, "qwen35_trojan_scaling.png"))
+        print(f"    Synchronized figures to: {paper_dir}")
 
 
 def main():
