@@ -1,11 +1,17 @@
 # NullSpace: Research & Verification Makefile
 # Follows Design-Dungeons ML & Research reproducibility standards
 
-.PHONY: all verify verify-lean verify-python test clean help
+.PHONY: all verify verify-lean verify-python sweep test clean help
 
-all: verify
+all: verify sweep
 
 verify: verify-lean verify-python
+
+sweep:
+	@echo "=================================================================="
+	@echo "  Running Empirical Mutation Sweeps on Qwen3.5-0.8B..."
+	@echo "=================================================================="
+	python3 experiments/mutation_sweep_qwen35.py
 
 verify-lean:
 	@echo "=================================================================="
