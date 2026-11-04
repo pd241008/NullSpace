@@ -25,8 +25,8 @@ flowchart TD
     C1 --> C3["Claim C3: CI Cache Poisoning<br/>(Editor vs. Auditor Boundary)"]
     C1 --> C4["Claim C4: Cross-Session NVRAM<br/>(Weights as Persistent State)"]
     
-    C5["Claim C5: MIT WSP Empirical Grounding<br/>(Qwen-0.8B Exp 8 Logs)"] --> C1
-    C2 --> Phase2["Phase 2: Empirical Mutation Sweeps<br/>(Qwen-0.5B Faultline Adaptation)"]
+    C5["Claim C5: MIT WSP Empirical Grounding<br/>(Qwen3.5-0.8B Exp 8 Logs)"] --> C1
+    C2 --> Phase2["Phase 2: Empirical Mutation Sweeps<br/>(Qwen3.5-0.8B NullSpace Engine)"]
 
     style C1 fill:#d0ebff,stroke:#1971c2,stroke-width:2px
     style Phase2 fill:#ffe8cc,stroke:#d9480f,stroke-width:2px

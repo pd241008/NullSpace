@@ -16,7 +16,7 @@
 
 3. **Model Architecture Scope:**
    - Phase 1 formalisms apply generally to multi-layer perceptron (MLP) down-projections and multi-head attention (MHA) output projections across transformer architectures (e.g., Qwen, LLaMA, Gemma).
-   - In Phase 1, numerical proofs validate feedforward projection layers ($d_{\text{in}} \to d_{\text{out}}$). Full multi-layer auto-regressive generation sweeps occur in Phase 2 on Qwen-0.5B.
+   - In Phase 1, numerical proofs validate feedforward projection layers ($d_{\text{in}} \to d_{\text{out}}$). Full multi-layer auto-regressive generation sweeps occur in Phase 2 on Qwen3.5-0.8B.
 
 4. **Quantization & Quantization Aware Triggers:**
    - While float32 LSB covert channels provide large storage capacity ($>32$ KB), down-casting to bfloat16 truncates the lower 16 bits of IEEE 754 mantissas.
