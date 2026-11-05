@@ -1,6 +1,6 @@
 {
   "claim_id": "C4",
-  "timestamp": "2026-11-03T17:05:47.818848+00:00",
+  "timestamp": "2026-11-05T07:34:27.579918+00:00",
   "attack_vector": "Cross-Session Covert Channels (Weights as NVRAM)",
   "secret_payload": "NULLSPACE_CROSS_SESSION_KEY_2026",
   "recovered_payload": "NULLSPACE_CROSS_SESSION_KEY_2026",

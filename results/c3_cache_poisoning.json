@@ -1,6 +1,6 @@
 {
   "claim_id": "C3",
-  "timestamp": "2026-11-03T17:05:47.808148+00:00",
+  "timestamp": "2026-11-05T07:34:27.574286+00:00",
   "attack_vector": "Sandbox Privilege & CI Cache Poisoning",
   "validated_pass_sha256": "86a4462467db1d1556db53575619779b598e6bc5aabd85099676237277d21e8c",
   "tampered_committed_sha256": "bc2ae04cf0b581b86605fb27c8d9091b9514f91e89f356c5b37136e6eee859dc",

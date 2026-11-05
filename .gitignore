@@ -17,5 +17,10 @@ __pycache__/
 
 # Confidential Research Planning & Drafts (Do not push)
 research_plan.md
+paper
 paper/
+artifact
+artifact/
+*.pdf
+
 

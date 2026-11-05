@@ -1,0 +1,31 @@
+{
+  "system": "PyC (PyTorch Concepts)",
+  "timestamp": "2026-11-05T07:34:32.032702+00:00",
+  "seed": 42,
+  "claims": {
+    "C1_CBM_Closed_Boundary": {
+      "claim": "PyC-C1: CBM Closed Trust Boundary",
+      "predicate_phi": true,
+      "semantic_requirement_r": true,
+      "latent_bypass_input_variance": 0.0,
+      "status": "PASSED"
+    },
+    "C2_CEM_Latent_Smuggling": {
+      "claim": "PyC-C2: CEM Latent Trust Smuggling",
+      "predicate_phi": true,
+      "semantic_requirement_r": false,
+      "entailment_failure": true,
+      "algebraic_bypass_error": 0.0,
+      "status": "VULNERABILITY_CONFIRMED"
+    },
+    "C3_Hybrid_Trust_Barrier": {
+      "claim": "PyC-C3: Gated Hybrid Trust Barrier",
+      "predicate_phi": true,
+      "semantic_requirement_r": true,
+      "max_residual_leakage": 0.0,
+      "latent_bypass_leakage": 0.0,
+      "status": "PASSED"
+    }
+  },
+  "formalism_verified": true
+}

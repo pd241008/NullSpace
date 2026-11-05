@@ -1,0 +1,53 @@
+[
+  {
+    "name": "CBM (Concept Bottleneck Model)",
+    "observational": {
+      "task_accuracy": 0.8526,
+      "task_f1": 0.8808535862477771,
+      "task_auc": 0.96741758727326,
+      "concept_mse": 0.008562684059143066
+    },
+    "causal_intervention": {
+      "baseline_attack_prob": 0.9279078841209412,
+      "targeted_attack_prob": 0.08185486495494843,
+      "full_attack_prob": 0.0932154655456543,
+      "cie_targeted_pct": 91.17855072021484,
+      "cie_full_pct": 89.95423126220703,
+      "latent_bypass_leakage_pct (TBSG Violation)": 0.0
+    }
+  },
+  {
+    "name": "CEM (Concept Embedding Model)",
+    "observational": {
+      "task_accuracy": 0.8291333333333334,
+      "task_f1": 0.8652825229960578,
+      "task_auc": 0.952835086623427,
+      "concept_mse": 0.0016035211738198996
+    },
+    "causal_intervention": {
+      "baseline_attack_prob": 0.9438563585281372,
+      "targeted_attack_prob": 0.940737247467041,
+      "full_attack_prob": 0.9419602155685425,
+      "cie_targeted_pct": 0.33046460151672363,
+      "cie_full_pct": 0.20089316368103027,
+      "latent_bypass_leakage_pct (TBSG Violation)": 98.23973176865046
+    }
+  },
+  {
+    "name": "Hybrid TBSG Model (Gated-CEM)",
+    "observational": {
+      "task_accuracy": 0.8634666666666667,
+      "task_f1": 0.8864493235750721,
+      "task_auc": 0.9670684882895607,
+      "concept_mse": 0.004733986686915159
+    },
+    "causal_intervention": {
+      "baseline_attack_prob": 0.9369349479675293,
+      "targeted_attack_prob": 0.23588615655899048,
+      "full_attack_prob": 0.36671513319015503,
+      "cie_targeted_pct": 74.82363891601562,
+      "cie_full_pct": 60.86012649536133,
+      "latent_bypass_leakage_pct (TBSG Violation)": 0.0
+    }
+  }
+]

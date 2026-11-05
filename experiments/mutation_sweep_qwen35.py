@@ -392,12 +392,13 @@ def plot_results(sweep1_data, sweep2_data, sweep3_data):
     plt.close()
     print(f"    Saved: {fig2_path}")
 
-    # Sync to paper directory if present
-    paper_dir = os.path.join(PROJECT_ROOT, "paper")
-    if os.path.exists(paper_dir):
-        shutil.copy(fig1_path, os.path.join(paper_dir, "qwen35_nullspace_vs_random.png"))
-        shutil.copy(fig2_path, os.path.join(paper_dir, "qwen35_trojan_scaling.png"))
-        print(f"    Synchronized figures to: {paper_dir}")
+    # Sync to artifact/WSP and paper directory if present
+    for target_dir_name in [os.path.join("artifact", "WSP"), "artifact", "paper"]:
+        target_dir = os.path.join(PROJECT_ROOT, target_dir_name)
+        if os.path.exists(target_dir):
+            shutil.copy(fig1_path, os.path.join(target_dir, "qwen35_nullspace_vs_random.png"))
+            shutil.copy(fig2_path, os.path.join(target_dir, "qwen35_trojan_scaling.png"))
+            print(f"    Synchronized figures to: {target_dir}")
 
 
 def main():

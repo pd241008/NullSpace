@@ -89,6 +89,8 @@ Numbers generated directly by the deterministic verification suite [`specs/verif
 
 Rather than relying purely on manual algebra, all theoretical bounds and entailment failures are formally verified in **Lean 4** (Lean v4.35.0, compiled with **0 `sorry`** in [`leanproofs/`](leanproofs/)):
 
+### System 1: Weight-Space Programming (WSP)
+
 | Theorem / Lemma | Statement | Lean 4 Identifier | Status |
 | :--- | :--- | :--- | :---: |
 | **Theorem 1** | **Semantic Gap Entailment Failure** | $(\exists a, \Phi(a) \land \neg R_j(a)) \to \neg (\forall x, \Phi(x) \to R_j(x))$ | `thm1_semantic_gap_entailment_failure` | **PROVED (0 sorry)** |
@@ -100,8 +102,19 @@ Rather than relying purely on manual algebra, all theoretical bounds and entailm
 | **Proposition 1** | **Attestation Gap Desync** | Evaluation metrics on $W_{\text{eval}}$ do not bind $W_{\text{commit}}$ | `prop1_attestation_gap_desync` | **PROVED (0 sorry)** |
 | **Proposition 2** | **Covert NVRAM Persistence** | Weight encodings survive conversational context wipes | `prop2_covert_nvram_persistence` | **PROVED (0 sorry)** |
 
+### System 2: PyTorch Concepts (PyC - Concept Bottlenecks)
+
+| Theorem / Lemma | Statement | Lean 4 Identifier | Status |
+| :--- | :--- | :--- | :---: |
+| **Theorem 1** | **Concept Semantic Gap Entailment Failure** | $(\exists a, \Phi_{\text{c}}(a) \land \neg R_{\text{safe}}(a)) \to \neg (\forall x, \Phi_{\text{c}}(x) \to R_{\text{safe}}(x))$ | `thm1_pyc_semantic_gap_entailment_failure` | **PROVED (0 sorry)** |
+| **Lemma 1** | **Pure CBM Closed Trust Boundary** | $c_1 = c_2 \implies g(c_1) = g(c_2)$ (Zero Latent Bypass) | `lem1_cbm_closed_trust_boundary` | **PROVED (0 sorry)** |
+| **Lemma 2** | **CEM Negative Embedding Bypass Algebra** | $0 \cdot e^+ + (1 - 0) \cdot e^- = e^-$ | `lem2_cem_negative_embedding_bypass` | **PROVED (0 sorry)** |
+| **Theorem 2** | **CEM Latent Trust Smuggling Gap** | $g(0 \cdot e^+ + 1 \cdot e_{\text{attack}}^-) \neq g(e_{\text{benign}}^-)$ under $\text{do}(C=0)$ | `thm2_cem_latent_trust_smuggling` | **PROVED (0 sorry)** |
+| **Theorem 3** | **Gated Hybrid Trust Barrier Annihilation** | $g_{\text{c}}(0) + \alpha \cdot 0 \cdot g_{\text{res}}(e) = g_{\text{c}}(0)$ (LBL = 0.00%) | `thm3_hybrid_trust_barrier_annihilation` | **PROVED (0 sorry)** |
+| **Proposition 1** | **Steerling Residual Dimension Hierarchy** | $d_{\text{steer}} < d_{\text{total}} \implies 0 < d_{\text{total}} - d_{\text{steer}}$ | `prop1_steerling_residual_dimension_positive` | **PROVED (0 sorry)** |
+
 ```bash
-# Build and verify Lean 4 proofs directly
+# Build and verify Lean 4 proofs across all systems directly
 make verify-lean
 ```
 
@@ -111,7 +124,10 @@ make verify-lean
 
 NullSpace strictly follows the **Design-Dungeons Engineering Playbook** and reproducibility discipline:
 
-- 📋 [**`CLAIM_MAP.md`**](CLAIM_MAP.md) — Principle P1: Navigable scientific claim map (C1–C5) with evidence files.
+- 📋 [**`CLAIM_MAP.md`**](CLAIM_MAP.md) — Principle P1: Navigable scientific claim map (C1–C6, P1–P4) with evidence files.
+- 🌌 [**`WSP/`**](WSP/) — System 1: Weight-Space Programming continuous weight delta TBSG and mutation sweeps.
+- 🧩 [**`PyC/`**](PyC/) — System 2: PyTorch Concepts TBSG security audit, empirical NIDS benchmarks, and Lean 4 proofs.
+- 🌐 [**`systems/`**](systems/) — Multi-system registry and cross-system vulnerability taxonomy.
 - ⏱️ [**`REVIEWER_GUIDE.md`**](REVIEWER_GUIDE.md) — Principle P6: Explicit 15-min, 30-min, and 2-hr review pathways.
 - 🏷️ [**`REPRODUCIBILITY_LEVELS.md`**](REPRODUCIBILITY_LEVELS.md) — Principle P4: Typed R1–R4 classification scale.
 - 🚧 [**`LIMITATIONS.md`**](LIMITATIONS.md) — Principle P5: Scope, assumptions, and boundaries discoverable up front.

@@ -1,0 +1,18 @@
+===============================================================================================
+EMPIRICAL TBSG BENCHMARK: CBM vs CEM vs HYBRID ON UNSW-NB15 NIDS
+===============================================================================================
+Model Architecture             | Test Acc  | ROC-AUC  | Targeted CIE%  | Full CIE%  | LBL % (TBSG Leak) 
+-----------------------------------------------------------------------------------------------
+CBM (Concept Bottleneck Model) | 85.26%    | 0.9674   | 91.18%         | 89.95%     | 0.00%             
+CEM (Concept Embedding Model)  | 82.91%    | 0.9528   | 0.33%          | 0.20%      | 98.24%            
+Hybrid TBSG Model (Gated-CEM)  | 86.35%    | 0.9671   | 74.82%         | 60.86%     | 0.00%             
+===============================================================================================
+
+KEY FINDINGS:
+1. CEM experiences 98.24% Latent Bypass Leakage (LBL). Interventions on concepts (do(C=0)) are ignored
+   because unconstrained latent embeddings (e^-) smuggle attack telemetry directly to the predictor.
+2. CBM enforces a strict semantic boundary (0.00% LBL), but has lower representational capacity.
+3. Hybrid TBSG Model uses a Trust Barrier Gate (Gate(C)), eliminating the 98.24% leak (0.00% LBL)
+   while outperforming both models in observational accuracy (86.35%).
+4. Dataset serialization verified using PyTorch 2.6+ safe deserialization (weights_only=True).
+

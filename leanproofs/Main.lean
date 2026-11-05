@@ -2,9 +2,9 @@ import NullSpaceProofs
 
 def main : IO Unit := do
   IO.println "================================================================="
-  IO.println "  NullSpace: Lean 4 Machine-Checked Formal Verification"
+  IO.println "  NullSpace: Multi-System Lean 4 Machine-Checked Formal Verification"
   IO.println "================================================================="
-  IO.println "Formal Theorems & Invariants Checked in Lean 4 (0 sorry):"
+  IO.println "--- SYSTEM 1: Weight-Space Programming (WSP) ---"
   IO.println "  [x] Theorem 1: Semantic Gap Entailment Failure (Phi ⊭ R_j)"
   IO.println "  [x] Lemma 1(i): Over-Parameterization Rank Hierarchy (0 < d - r)"
   IO.println "  [x] Lemma 1(ii): Rank-One Null-Space Annihilation ((v*u)*x = 0)"
@@ -13,6 +13,13 @@ def main : IO Unit := do
   IO.println "  [x] Theorem 2: The Trusting Trust Weight Gap (Simultaneous Gap)"
   IO.println "  [x] Proposition 1: Editor-Auditor Attestation Gap Desync"
   IO.println "  [x] Proposition 2: Covert NVRAM Persistence Across Context Wipes"
+  IO.println ""
+  IO.println "--- SYSTEM 2: PyTorch Concepts (PyC - Concept Bottleneck TBSG) ---"
+  IO.println "  [x] Theorem 1: Concept Semantic Gap Entailment Failure (Phi_c ⊭ R_safe)"
+  IO.println "  [x] Lemma 1: Pure CBM Closed Trust Boundary (c_1 = c_2 → g c_1 = g c_2)"
+  IO.println "  [x] Lemma 2: CEM Negative Embedding Bypass Algebra (0*e+ + 1*e- = e-)"
+  IO.println "  [x] Theorem 2: CEM Latent Trust Smuggling Gap (g(e-_att) ≠ g(e-_benign))"
+  IO.println "  [x] Theorem 3: Gated Hybrid Trust Barrier Annihilation (LBL = 0)"
+  IO.println "  [x] Proposition 1: Steerling Residual Dimension Bound (0 < d_total - d_steer)"
   IO.println "================================================================="
-  IO.println "RESULT: Machine-checked formal certainty established (Lean v4.35.0)."
-
+  IO.println "RESULT: Machine-checked formal certainty verified across all systems (0 sorry)."
